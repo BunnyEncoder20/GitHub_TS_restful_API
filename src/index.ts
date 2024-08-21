@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
 import dotenv from "dotenv";
+
 import connect_to_db from "./db/index";
 
 dotenv.config({
