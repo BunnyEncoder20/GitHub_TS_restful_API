@@ -3,6 +3,11 @@ import http from 'http';
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config({
+    path:"./.env"
+});
 
 const app = express();
 
@@ -16,8 +21,8 @@ app.use(cookieParser())
 
 
 const server = http.createServer(app);
-const PORT = 8080;
 
-server.listen(PORT, () => {
-    console.log(`Server running at : https://localhost:${PORT}/`);
+
+server.listen(process.env.PORT, () => {
+    console.log(`Server running at : https://localhost:${process.env.PORT}/`);
 });
